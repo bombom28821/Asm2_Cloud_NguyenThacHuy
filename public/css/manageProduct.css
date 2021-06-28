@@ -1,0 +1,139 @@
+/* GLOBAL */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    color: black;
+    background-color: #eef1f2;
+    letter-spacing: 1px;
+    
+}
+/* BANNER */
+.banner{
+    height: 280px;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+/* HEADER  */
+header{
+    background-color: #5e5e56;
+}
+.header__content{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.header__logo a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.header__logo i{
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+nav ul{
+    list-style: none;
+    margin-bottom: 0;
+}
+nav ul li{
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: all .5s;
+}
+nav ul li a:hover{
+    color:#f5ce42;
+    text-decoration: none;
+}
+/* FORM  */
+.form__Manage{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+}
+.form__Manage form{
+    width: fit-content;
+    background-color: white;
+    border-radius: 8px;
+}
+.form__Manage form fieldset{
+    padding: 20px;
+    border: none;
+}
+.form__Manage h2{
+    margin-bottom: 20px;
+}
+.form__Manage input,.form__Manage textarea{
+    background-color: #eef1f2;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.3rem;
+    border: none;
+}
+.form__Manage textarea{
+    resize: none;
+}
+.form__Manage input:focus,.form__Manage textarea:focus{
+    outline: none;
+}
+.form__Manage input:last-child{
+    background-color: #e0dc0d;
+    cursor: pointer;
+}
+.form__Manage input:last-child:hover{
+    background-color: #dec807;
+}
+
+/* All Product */
+.manage{
+    width: 70%;
+    margin: auto;
+}
+.manage_add{
+    padding: 20px 0;
+    display: flex;
+}
+.manage_add a{
+    text-decoration: none;
+    background-color: #FC5A31;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+}
+.manage_add form{
+    margin-left: 45%;
+    display: flex;
+    align-items: center;
+}
+.manage_add form input:first-child{
+    width: 250px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.manage_add form input:last-child{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.table--product a{
+    text-decoration: none;
+    color: black;
+}
+
+

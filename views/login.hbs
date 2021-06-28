@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {{!-- Font-Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    {{!-- Link CSS --}}
+    <link rel="stylesheet" href="css/manageProduct.css">
+</head>
+
+<body>
+    {{!-- BANNER --}}
+    <section class="banner">
+        <img src="images/banner-toys.png" alt="banner">
+    </section>
+    {{!-- HEADER --}}
+    <header>
+        <div class="header__content">
+            <div class="header__logo">
+                <a href="/">
+                    <i class="fab fa-themeisle"></i>
+                    <h1>H&M Shop</h1>
+                </a>
+            </div>
+        </div>
+    </header>
+    {{!-- Form --}}
+    <div class="form__Manage">
+        <form action="/loginAccount" method="POST">
+            <fieldset>
+                <h2>Admin Login</h2>
+                <input type="text" name="txtName" placeholder="Username" value="{{nameAccount}}">
+                <br>
+                <h3 style="color: red;">{{accountError}}</h3>
+                <br>
+                <input type="password" name="txtPassword" placeholder="Password" value="{{pass}}">
+                <br>
+                <h3 style="color: red;">{{passError}}</h3>
+                <br>
+                <h3 style="color: red;">{{errorMsg}}</h3>
+                <input type="submit" value="Login">
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>

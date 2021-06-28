@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {{!-- Font-Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    {{!-- bootstrap --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {{!-- Link CSS --}}
+    <link rel="stylesheet" href="css/manageProduct.css">
+</head>
+
+<body>
+    {{!-- BANNER --}}
+    <section class="banner">
+        <img src="images/banner-toys.png" alt="banner">
+    </section>
+    {{!-- HEADER --}}
+    <header>
+        <div class="header__content">
+            <div class="header__logo">
+                <a href="/">
+                    <i class="fab fa-themeisle"></i>
+                    <h1>H&M Shop</h1>
+                </a>
+            </div>
+                        <nav>
+                <ul>
+                    <li><a href="/logout" onclick="alert('Logout success!')">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    {{!-- Form --}}
+    <div class="form__Manage">
+        <form action="/doAddProduct" method="POST">
+            <fieldset>
+                <h2>Add Product</h2>
+                <input type="text" name="txtName" placeholder="Name" value="{{nameProduct}}">
+                <br>
+                <h4 style="color: red;">{{nameError}}</h4>
+                <br>
+                <input type="text" name="txtPrice" placeholder="Price" value="{{priceProduct}}">
+                <br>
+                <h4 style="color: red;">{{priceError}}</h4>
+                <br>
+                <textarea name="txtDescription" id="" cols="35"  placeholder="Message...">{{descProduct}}</textarea>
+                <br><br>
+                <input type="submit" value="Add Product">
+            </fieldset>
+        </form>
+    </div>                                                             
+
+</body>
+
+</html>
