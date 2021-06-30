@@ -73,9 +73,11 @@ app.post('/doAddProduct', async (req, res) => {
     req.session.priceProduct = priceInput;
     req.session.descProduct = descInput;
     if (nameInput.trim().length < 3) {
-        res.render('addProduct', { nameError: 'Name has length >= 3',nameProduct: req.session.nameProduct, priceProduct: req.session.priceProduct, descProduct: req.session.descProduct});
+        res.render('addProduct', { nameError: 'Name has length >= 3',nameProduct: req.session.nameProduct,
+         priceProduct: req.session.priceProduct, descProduct: req.session.descProduct});
     } else if (isNaN(priceInput) || priceInput.trim().length == 0 || priceInput > 1000 || priceInput <= 0) {
-        res.render('addProduct', { priceError: 'Price is number and has price <= 1000 USD',nameProduct: req.session.nameProduct, priceProduct: req.session.priceProduct, descProduct: req.session.descProduct });
+        res.render('addProduct', { priceError: 'Price is number and has price <= 1000 USD',nameProduct: req.session.nameProduct,
+         priceProduct: req.session.priceProduct, descProduct: req.session.descProduct });
     } else {
         var newProduct = { name: nameInput, price: priceInput, description: descInput };
         await dbHandler.insertOneIntoCollection(newProduct, 'Products');
