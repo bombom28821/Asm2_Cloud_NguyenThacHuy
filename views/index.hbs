@@ -82,8 +82,31 @@
                 </div>
             </div>
             <div class="col p-0">
-                <div class="intro__img">
+                <!-- Button trigger modal -->
+                <div class="intro__img" data-toggle="modal" data-target="#carModel" style="cursor: pointer;">
                     <img src="images/intro-car.jpg" alt="">
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="carModel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header d-flex align-items-center">
+                                <h3 class="modal-title mr-4">Color Car</h3>
+                                <button id="btn-yellow"></button>
+                                <button id="btn-red"></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal--imgCar">
+                                <img id="car" src="images/lamborghini-yellow-removebg.png" alt="lambor-yellow">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col intro__text">
@@ -179,6 +202,7 @@
             }
         })
     </script>
+    <script src="customizeJS/main.js"></script>
 </body>
 
 </html>

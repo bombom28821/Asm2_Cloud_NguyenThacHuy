@@ -150,6 +150,36 @@ nav ul li a:hover{
 .intro__title p{
     font-size: 1.15rem;
 }
+/* INTRODUCTION-MODAL */
+#btn-yellow,#btn-red{
+    padding: 10px 10px;
+    margin-right: 15px;
+    border-radius: 50%;
+    border-color: transparent;
+}
+#btn-yellow:focus,#btn-red:focus{
+    outline: none;
+}
+#btn-yellow{
+    background-color: #f5dd42;
+    transition: all .5s;
+}
+#btn-red{
+    background-color: #f56342;
+    transition: all .5s;
+}
+#btn-yellow:hover,#btn-red:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+#car{
+    transition: all .5s;
+    margin: 0 20px;
+}
+#car:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
 /* CONTACT */
 .contact{
     margin-bottom: 80px;
