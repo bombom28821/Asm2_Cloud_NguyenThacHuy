@@ -62,7 +62,11 @@ app.post('/search', async (req, res) => {
 })
 
 app.get('/addProduct', (req, res) => {
-    res.render('addProduct');
+    if(req.session.username != null){
+        res.render('addProduct');
+    }else{
+        res.render('login');
+    }
 })
 
 app.post('/doAddProduct', async (req, res) => {
@@ -81,16 +85,19 @@ app.post('/doAddProduct', async (req, res) => {
     } else {
         var newProduct = { name: nameInput, price: priceInput, description: descInput };
         await dbHandler.insertOneIntoCollection(newProduct, 'Products');
-        const results = await dbHandler.searchProduct('', 'Products');
-        res.render('manage', { model: results });
+        res.redirect('manage');
     }
 })
 
 app.get('/edit', async (req, res) => {
-    const id = req.query.id;
+    if(req.session.username != null){
+        const id = req.query.id;
 
-    const productToEdit = await dbHandler.findById(id);
-    res.render('edit', { product: productToEdit })
+        const productToEdit = await dbHandler.findById(id);
+        res.render('edit', { product: productToEdit })
+    }else{
+        res.render('login');
+    }
 })
 
 app.post('/update', async (req, res) => {
@@ -111,16 +118,23 @@ app.post('/update', async (req, res) => {
 })
 
 app.get('/delete', async (req, res) => {
-    const id = req.query.id;
-    await dbHandler.deleteProduct(id);
-    const results = await dbHandler.searchProduct('', 'Products');
-    res.render('manage', { model: results });
+    if(req.session.username != null){
+        const id = req.query.id;
+        await dbHandler.deleteProduct(id);
+        res.redirect('manage');
+    }else{
+        res.render('login');
+    }
 
 })
 
 app.get('/logout', (req, res) => {
-    req.session.destroy();
-    res.render('');
+    if(req.session.username != null){
+        req.session.destroy();
+        res.render('');
+    }else{
+        res.render('login');
+    }
 })
 
 var PORT = process.env.PORT || 5000;
