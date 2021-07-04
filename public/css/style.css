@@ -224,8 +224,8 @@ footer {
     margin: auto;
     padding-top: 50px;
 }
-.footer__item {
-    margin: 0 20px;
+.footer__item{
+    padding: 0 20px;
 }
 .footer__item h2 {
     font-weight: 700;
@@ -384,15 +384,11 @@ footer {
     }
     /* FOOTER  */
     .footer__content {
-        width: 80%;
         padding-top: 30px;
         text-align: center;
     }
-    .footer__item{
-        margin: 0;
-    }
     .footer__item h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .footer__item p {
         font-size: 1.0rem;
