@@ -12,3 +12,15 @@ document.getElementById('btn-red').onclick = function(){
     imgRed.src="images/lamborghini-red-removebg.png";
     console.log('red')
 }
+// About
+let sliceString = (num)=>{
+    let text = getEle('about__text');
+    if(text.innerHTML.length > num){
+        let newText = text.innerHTML.slice(0, num) + '...';
+        text.innerHTML = newText;
+    }
+    
+}
+window.addEventListener('load',function(){
+    sliceString(83);
+})
