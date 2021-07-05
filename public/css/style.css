@@ -99,10 +99,25 @@ nav ul li a:hover {
 .about__rightContent h2 {
     font-weight: 700;
 }
-.about__rightContent p {
+.about__rightContent #about__text {
     margin: 20px 0;
     font-weight: 500;
     font-size: 1.1rem;
+}
+#seeMore,
+#shortView {
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.5s;
+}
+#seeMore:hover,
+#shortView:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0eb0f0;
+}
+#shortView {
+    display: none;
 }
 .about__rightContent .btn-about {
     padding: 8px 30px;
@@ -142,7 +157,7 @@ nav ul li a:hover {
     color: white;
 }
 .intro__title {
-    padding: 0 70px;
+    padding: 10px 70px;
 }
 .intro__title h2 {
     font-weight: 700;
@@ -176,9 +191,11 @@ nav ul li a:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
+.modal--imgCar {
+    text-align: center;
+}
 #car {
     transition: all 0.5s;
-    margin: 0 20px;
 }
 #car:hover {
     cursor: pointer;
@@ -224,7 +241,7 @@ footer {
     margin: auto;
     padding-top: 50px;
 }
-.footer__item{
+.footer__item {
     padding: 0 20px;
 }
 .footer__item h2 {
@@ -296,7 +313,6 @@ footer {
     }
     /* CAROUSEL */
     .carousel .item img {
-        width: 100%;
         height: 350px;
     }
     .carousel .carousel__content .owl-dots {
@@ -304,21 +320,19 @@ footer {
     }
     /* ABOUT */
     .about {
-        padding: 50px 0;
-    }
-    .about__content {
-        width: 100%;
+        padding: 50px 0 30px;
     }
     .about__left img {
         width: 380px;
+        margin: auto;
     }
     .about__rightContent {
         width: 100%;
         margin-top: 30px;
         padding: 0 10px;
     }
-    .about__rightContent p {
-        margin: 10px 0;
+    .about__rightContent #about__text {
+        margin: 10px 0 0;
         font-weight: 500;
         font-size: 1rem;
     }
@@ -327,7 +341,7 @@ footer {
     }
     /* INTRODUCTION */
     .intro {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     .intro h1 {
         margin-bottom: 50px;
@@ -336,7 +350,7 @@ footer {
         width: 100%;
     }
     .intro__title {
-        padding: 0 15px;
+        padding: 10px 15px;
     }
     .intro__title h2 {
         margin-bottom: 10px;
@@ -354,7 +368,6 @@ footer {
         padding: 7px;
     }
     #car {
-        margin: 0 20px;
         width: 280px;
     }
     /* CONTACT */
@@ -364,7 +377,9 @@ footer {
     .contact h1 {
         margin-bottom: 50px;
     }
-
+    .contact__map iframe {
+        height: 300px;
+    }
     .contact__info {
         padding-top: 20px;
     }
@@ -376,7 +391,7 @@ footer {
     }
     .contact__item i {
         font-size: 2rem;
-       
+
         margin-bottom: 10px;
     }
     .contact__item p {
@@ -391,7 +406,7 @@ footer {
         font-size: 1.5rem;
     }
     .footer__item p {
-        font-size: 1.0rem;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
     }
     .footer__about span {
@@ -409,9 +424,407 @@ footer {
     .banner {
         height: 180px;
     }
+    /* HEADER  */
+    .header__content {
+        width: 90%;
+        padding: 12px 0;
+    }
+    .header__logo i {
+        font-size: 0.9rem;
+        margin-right: 8px;
+    }
+    .header__logo h1 {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+    nav ul li {
+        margin: 0 7px;
+    }
+    nav ul li a {
+        font-size: 0.6rem;
+        vertical-align: middle;
+    }
+    /* CAROUSEL */
+    .carousel .item img {
+        height: 450px;
+    }
+    .carousel .carousel__content .owl-dots {
+        bottom: 15px;
+    }
+    /* ABOUT */
+    .about {
+        padding: 50px 0 35px;
+    }
+    .about__left img {
+        width: 320px;
+    }
+    .about__rightContent {
+        width: 100%;
+        padding: 0 8px;
+    }
+    #seeMore {
+        display: none;
+    }
+    .about__rightContent #about__text {
+        margin: 10px 0 8px;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .about__rightContent .btn-about {
+        padding: 6px 20px;
+    }
+    /* INTRODUCTION */
+    .intro {
+        margin-bottom: 40px;
+    }
+    .intro h1 {
+        margin-bottom: 55px;
+    }
+    .intro__img {
+        height: 100%;
+    }
+    .intro__img img {
+        width: 100%;
+        height: 100%;
+    }
+    .intro__title {
+        padding: 10px 20px;
+    }
+    .intro__title h2 {
+        margin-bottom: 12px;
+        font-size: 1.8rem;
+    }
+    .intro__title p {
+        font-size: 1.1rem;
+    }
+    /* INTRODUCTION-MODAL */
+    .intro__model h3 {
+        font-size: 1.6rem;
+    }
+    #btn-yellow,
+    #btn-red {
+        padding: 9px;
+    }
+    #car {
+        width: 300px;
+    }
+    /* CONTACT */
+    .contact {
+        margin-bottom: 60px;
+    }
+    .contact h1 {
+        margin-bottom: 55px;
+    }
+    .contact__map iframe {
+        height: 350px;
+    }
+    .contact__info {
+        padding-top: 22px;
+    }
+    .contact__content {
+        width: 95%;
+    }
+    .contact__item {
+        padding: 0 25px;
+    }
+    .contact__item i {
+        font-size: 2.2rem;
+
+        margin-bottom: 12px;
+    }
+    .contact__item p {
+        font-size: 1.1rem;
+    }
+    /* FOOTER  */
+    .footer__content {
+        width: 90%;
+        padding-top: 35px;
+        text-align: center;
+    }
+    .footer__item h2 {
+        font-size: 1.8rem;
+    }
+    .footer__item p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .footer__about span {
+        font-size: 1.3rem;
+    }
+    .footer__contact i {
+        font-size: 1.4rem;
+    }
+    .footer__socials i {
+        font-size: 2rem;
+        margin-right: 18px;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     .banner {
         height: 230px;
+    }
+    .header__content {
+        width: 85%;
+        padding: 13px 0;
+    }
+    .header__logo i {
+        font-size: 1.2rem;
+        margin-right: 9px;
+    }
+    .header__logo h1 {
+        font-size: 1.8rem;
+    }
+    nav ul li {
+        margin: 0 9px;
+    }
+    nav ul li a {
+        font-size: 0.75rem;
+        vertical-align: middle;
+    }
+    /* CAROUSEL */
+    .carousel .item img {
+        height: 520px;
+    }
+    .carousel .carousel__content .owl-dots {
+        bottom: 18px;
+    }
+    /* ABOUT */
+    .about {
+        padding: 60px 0 45px;
+    }
+    .about__left img {
+        width: 400px;
+    }
+    .about__rightContent {
+        width: 100%;
+        padding: 0 10px;
+    }
+    #seeMore {
+        display: none;
+    }
+    .about__rightContent #about__text {
+        margin: 15px 0 12px;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .about__rightContent .btn-about {
+        padding: 7px 24px;
+    }
+    /* INTRODUCTION */
+    .intro {
+        margin-bottom: 60px;
+    }
+    .intro h1 {
+        margin-bottom: 60px;
+    }
+    .intro__img {
+        height: 100%;
+    }
+    .intro__img img {
+        width: 100%;
+        height: 100%;
+    }
+    .intro__title {
+        padding: 10px 40px;
+    }
+    .intro__title h2 {
+        margin-bottom: 15px;
+        font-size: 2rem;
+    }
+    .intro__title p {
+        font-size: 1.1rem;
+    }
+    /* INTRODUCTION-MODAL */
+    .intro__model h3 {
+        font-size: 1.8rem;
+    }
+    #btn-yellow,
+    #btn-red {
+        padding: 10px;
+    }
+    #car {
+        width: 360px;
+    }
+    /* CONTACT */
+    .contact {
+        margin-bottom: 65px;
+    }
+    .contact h1 {
+        margin-bottom: 60px;
+    }
+    .contact__map iframe {
+        height: 400px;
+    }
+    .contact__info {
+        padding-top: 25px;
+    }
+    .contact__content {
+        width: 85%;
+    }
+    .contact__item {
+        padding: 0 30px;
+    }
+    .contact__item i {
+        font-size: 2.4rem;
+
+        margin-bottom: 15px;
+    }
+    .contact__item p {
+        font-size: 1.1rem;
+    }
+    /* FOOTER  */
+    .footer__content {
+        width: 80%;
+        padding-top: 40px;
+        text-align: center;
+    }
+    .footer__item h2 {
+        font-size: 2rem;
+    }
+    .footer__item p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .footer__about span {
+        font-size: 1.4rem;
+    }
+    .footer__contact i {
+        font-size: 1.5rem;
+    }
+    .footer__socials i {
+        font-size: 2.2rem;
+        margin-right: 20px;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1392px){
+    .banner {
+        height: 260px;
+    }
+    .header__content {
+        width: 78%;
+        padding: 15px 0;
+    }
+    .header__logo i {
+        font-size: 1.4rem;
+        margin-right: 10px;
+    }
+    .header__logo h1 {
+        font-size: 2rem;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    nav ul li a {
+        font-size: 0.95rem;
+        vertical-align: middle;
+    }
+    /* CAROUSEL */
+    .carousel .item img {
+        height: 560px;
+    }
+    .carousel .carousel__content .owl-dots {
+        bottom: 19px;
+    }
+    /* ABOUT */
+    .about {
+        padding: 65px 0 55px;
+    }
+    .about__left img {
+        width: 500px;
+    }
+    .about__rightContent {
+        width: 100%;
+        padding: 0 12px;
+    }
+    .about__rightContent #about__text {
+        margin: 18px 0 16px;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .about__rightContent .btn-about {
+        padding: 8px 27px;
+    }
+    /* INTRODUCTION */
+    .intro {
+        margin-bottom: 65px;
+    }
+    .intro h1 {
+        margin-bottom: 68px;
+    }
+    .intro__img {
+        height: 100%;
+    }
+    .intro__img img {
+        width: 100%;
+        height: 100%;
+    }
+    .intro__title {
+        padding: 10px 55px;
+    }
+    .intro__title h2 {
+        margin-bottom: 18px;
+        font-size: 2.2rem;
+    }
+    .intro__title p {
+        font-size: 1.1rem;
+    }
+    /* INTRODUCTION-MODAL */
+    .intro__model h3 {
+        font-size: 1.8rem;
+    }
+    #btn-yellow,
+    #btn-red {
+        padding: 10px;
+    }
+    #car {
+        width: 380px;
+    }
+    /* CONTACT */
+    .contact {
+        margin-bottom: 70px;
+    }
+    .contact h1 {
+        margin-bottom: 68px;
+    }
+
+    .contact__info {
+        padding-top: 28px;
+    }
+    .contact__content {
+        width: 78%;
+    }
+    .contact__item {
+        padding: 0 30px;
+    }
+    .contact__item i {
+        font-size: 2.5rem;
+
+        margin-bottom: 18px;
+    }
+    .contact__item p {
+        font-size: 1.1rem;
+    }
+    /* FOOTER  */
+    .footer__content {
+        width: 75%;
+        padding-top: 45px;
+        text-align: center;
+    }
+    .footer__item h2 {
+        font-size: 2.2rem;
+    }
+    .footer__item p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .footer__about span {
+        font-size: 1.4rem;
+    }
+    .footer__contact i {
+        font-size: 1.5rem;
+    }
+    .footer__socials i {
+        font-size: 2.2rem;
+        margin-right: 20px;
     }
 }

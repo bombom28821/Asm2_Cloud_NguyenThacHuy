@@ -24,3 +24,16 @@ let sliceString = (num)=>{
 window.addEventListener('load',function(){
     sliceString(83);
 })
+let text = getEle('about__text');
+let tempText = text.innerHTML;
+document.getElementById('seeMore').onclick = ()=>{
+    text.innerHTML = tempText;
+
+    document.getElementById('shortView').style.display = 'block';
+    document.getElementById('seeMore').style.display = 'none';
+}
+document.getElementById('shortView').onclick = ()=>{
+    sliceString(83);
+    document.getElementById('shortView').style.display = 'none';
+    document.getElementById('seeMore').style.display = 'block';
+}
