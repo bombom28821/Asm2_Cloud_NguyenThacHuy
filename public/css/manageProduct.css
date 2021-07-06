@@ -109,8 +109,9 @@ nav ul li a:hover{
 .manage_add{
     padding: 20px 0;
     display: flex;
+    justify-content: space-around;
 }
-.manage_add a{
+.manage_add .add{
     text-decoration: none;
     background-color: #FC5A31;
     padding: 10px;
@@ -118,7 +119,7 @@ nav ul li a:hover{
     color: white;
 }
 .manage_add form{
-    margin-left: 45%;
+    
     display: flex;
     align-items: center;
 }
